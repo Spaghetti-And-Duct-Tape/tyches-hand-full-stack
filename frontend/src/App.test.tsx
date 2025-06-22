@@ -1,0 +1,26 @@
+import { describe, expect, test } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import userEvent from "@testing-library/user-event";
+import "@testing-library/jest-dom/vitest";
+
+import App from './App';
+
+describe('App', () => {
+  test('should render a button', () => {
+    render(<App />);
+    const button = screen.getByRole('button');
+
+    expect(button).toBeInTheDocument();
+  });
+
+  test('should add to the count when the button is clicked', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    
+    const button = screen.getByRole('button');
+
+    await user.click(button);
+    expect(button).toHaveTextContent('1');
+  });
+})
