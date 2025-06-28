@@ -1,0 +1,41 @@
+.glitch-title {
+  opacity: 0;
+  text-align: center;
+  color: #922C23;
+  text-shadow: 
+    0 0 5px #8B140C,
+    0 0 10px #8B140C;
+  font-size: 3.5rem;
+  letter-spacing: 0.05em;
+  font-weight: 900;
+  animation: soft-descent 2s ease-in-out forwards;
+}
+
+.glitch-letter {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    opacity: 0.8;
+    z-index: -1;
+    animation: glitch-flicker 0.5s steps(5, start) infinite; 
+  }
+
+  &::before {
+    color: #ff00ff;
+    left: -0.125rem;
+    top: 0.125rem;
+  }
+
+  &::after {
+    color: #00ffff;
+    left: 0.125rem;
+    top: -0.125rem;
+    animation-delay: 0.1s;
+  }
+}
+
