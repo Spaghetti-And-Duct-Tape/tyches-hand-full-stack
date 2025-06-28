@@ -16,27 +16,32 @@ import "./title.scss";
   { greek: 'ρ', english: 'd' },
 ];
 
+const glitchable = greekToEnglishMap.map((_, i) => i);
+
 export default function Title() {
   const [text, setText] = useState(greekToEnglishMap.map(letter => letter.english));
   const [glitchedIndex, setGlitchedIndex] = useState<number | null>(null);
 
   useEffect(() => {
-    const glitchable = greekToEnglishMap.map((_, i) => i);
-    const randomInterval = Math.floor(3000 + Math.random() * 7001);
-    const glitchInterval = setInterval(() => {
+    scheduleGlitch();
+  }, []);
+
+  function scheduleGlitch() {
+    const randomInterval = Math.floor(5000 + Math.random() * 10001);
+    setTimeout(() => {
       const randomIndex = glitchable[Math.floor(Math.random() * glitchable.length)];
       startGlitchAnimation(randomIndex);
-    }, randomInterval);
 
-    return () => clearInterval(glitchInterval);
-  }, []);
+      scheduleGlitch();
+    }, randomInterval)
+  };
 
   async function startGlitchAnimation(number: number) {
     await wait(2200);
-    setGlitchedIndex(4);
+    setGlitchedIndex(number);
     setText(prev => {
       const updated = [...prev];
-      updated[4] = greekToEnglishMap[4].greek;
+      updated[number] = greekToEnglishMap[number].greek;
       return updated;
     });
 
@@ -44,7 +49,7 @@ export default function Title() {
     setGlitchedIndex(null);
     setText(prev => {
       const updated = [...prev];
-      updated[4] = greekToEnglishMap[4].english;
+      updated[number] = greekToEnglishMap[number].english;
       return updated;
     });
   };
@@ -54,16 +59,22 @@ export default function Title() {
   return(
     <h1 className="glitch-title">
       { text.map((char, i) => (
-        <span
+        <span 
+          className="letter-wrapper"
           key={ i }
-          className={ glitchedIndex === i ? 'glitch-letter' : '' }
-          data-text={ char }
-          style={{
-            fontFamily: 'Cinzel, serif',
-            marginLeft: char === " " ? "20px" : "0"
-          }}
         >
-          { char }
+          <span
+            className="letter-shadow"
+          >
+            { greekToEnglishMap[i].english }
+          </span>
+
+          <span
+            className={ `letter-visible ${ glitchedIndex === i ? "glitch-letter" : "" }` }
+            data-text={ char }
+          >
+            { char }
+          </span>
         </span>
       ))}
     </h1>

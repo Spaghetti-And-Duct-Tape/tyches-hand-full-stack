@@ -9,6 +9,22 @@
   letter-spacing: 0.05em;
   font-weight: 900;
   animation: soft-descent 2s ease-in-out forwards;
+
+  .letter-wrapper {
+    position: relative;
+    display: inline-block;
+
+    .letter-shadow {
+      visibility: hidden;
+      white-space: pre;
+    }
+
+    .letter-visible {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
 }
 
 .glitch-letter {
@@ -38,4 +54,3 @@
     animation-delay: 0.1s;
   }
 }
-
