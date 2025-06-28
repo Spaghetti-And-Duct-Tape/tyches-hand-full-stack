@@ -1,0 +1,21 @@
+#landing-page {
+  transition: all 0.5s ease-in-out;
+  
+  .main-menu-container {
+    width: 32rem;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+
+  .visible {
+    opacity: 1;
+    height: 4rem;
+
+    p {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+  }
+}
