@@ -1,13 +1,19 @@
+@use "../../../styles/variables" as variables;
+
 .glitch-title {
-  opacity: 0;
+  font-size: clamp(2rem, 8vw, 8rem);
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  font-weight: 900;
   text-align: center;
-  color: #922C23;
+  margin: 0 auto;
+  color: variables.$title-color;
   text-shadow: 
     0 0 5px #8B140C,
     0 0 10px #8B140C;
-  font-size: 3.5rem;
-  letter-spacing: 0.05em;
-  font-weight: 900;
+
+  opacity: 0;
   animation: soft-descent 2s ease-in-out forwards;
 
   .letter-wrapper {

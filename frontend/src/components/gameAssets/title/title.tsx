@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Howl } from "howler";
 import "@fontsource/cinzel/700.css";
-import { wait } from "../utils/utils";
+import { wait } from "../../../utils/utils";
 import "./title.scss";
 import GlitchLetters from "./glitchLetters";
 
@@ -81,7 +81,7 @@ export default function Title() {
       await startGlitchAnimation(index);
 
       scheduleGlitch();
-    }, randomInterval);
+    }, 1000);
   };
 
   function handleTitleLoads() {
@@ -92,7 +92,9 @@ export default function Title() {
     <h1 
       className="glitch-title"
       style={{
-        margin: "0"
+        margin: "0",
+        display: "flex",
+        alignItems: "center"
       }}
       onAnimationEnd={ handleTitleLoads }
     >

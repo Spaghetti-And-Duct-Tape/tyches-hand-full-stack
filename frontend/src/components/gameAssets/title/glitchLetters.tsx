@@ -1,3 +1,4 @@
+import Eye from "./eye";
 import type { GrEnType } from "./title";
 
 type GlitchLetterProp = {
@@ -13,6 +14,11 @@ export default function GlitchLetters({
     <>
       { letterArray.map((char, i) => {
         const isGlitched = currentIndex === i;
+        if (char.english === " ") return (
+          <Eye
+            key={ i } 
+          />
+        )
 
         return (
           <span
