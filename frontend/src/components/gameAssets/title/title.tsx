@@ -72,7 +72,7 @@ export default function Title() {
 
   //Randomly glitches the text
   function scheduleGlitch() {
-    const randomInterval = Math.floor(5000 + Math.random() * 10001);
+    const randomInterval = Math.floor(5000 + Math.random() * 5001);
 
     timeoutRef.current = setTimeout(async () => {
       if (glitchActive.current) return scheduleGlitch();
@@ -81,7 +81,7 @@ export default function Title() {
       await startGlitchAnimation(index);
 
       scheduleGlitch();
-    }, 1000);
+    }, randomInterval);
   };
 
   function handleTitleLoads() {

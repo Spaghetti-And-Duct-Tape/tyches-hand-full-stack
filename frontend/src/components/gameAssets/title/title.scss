@@ -44,7 +44,7 @@
     overflow: hidden;
     opacity: 0.8;
     z-index: -1;
-    animation: glitch-flicker 0.5s steps(5, start) infinite; 
+    animation: glitch-flicker 0.3s steps(5, start) infinite; 
   }
 
   &::before {
