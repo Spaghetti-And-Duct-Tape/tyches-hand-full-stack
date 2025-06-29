@@ -30,11 +30,6 @@ export default function Title() {
   const glitchActive = useRef(false);
   const lastIndex = useRef(-1);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const glitchSFX = new Howl({
-    src: ['/audio/sandufi_glitch_loop_freesound.mp3'],
-    loop: false,
-    volume: 0.2,
-  });
 
   useEffect(() => {
     return () => {
@@ -60,7 +55,6 @@ export default function Title() {
 
     glitchActive.current = true;
     setGlitchedIndex(index);
-    glitchSFX.play();
 
     await wait(glitchDelay);
     setGlitchedIndex(-1);
