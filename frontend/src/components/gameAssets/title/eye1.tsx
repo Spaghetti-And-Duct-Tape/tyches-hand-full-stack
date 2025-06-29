@@ -13,10 +13,6 @@ export default function Eye() {
       <Arc
         position="top"
       />
-      <div className="mask-cover" />
-      <div
-        className="pupil"
-      />
       <Arc
         position="bottom" 
       />
@@ -56,6 +52,15 @@ function Arc({
           </path>
         </svg>
       </div>
+
+
+      {/* Front face with pupil */}
+      <div className="lid-wrapper front">
+        <div className="pupil">
+          <div className="pupil-half" />
+        </div>
+      </div>
+      <div className="lid-wrapper back"/>
     </div>
   )
 };
