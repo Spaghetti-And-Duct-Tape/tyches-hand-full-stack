@@ -1,23 +1,16 @@
+import "./inkArt.scss";
+
 export default function InkArt() {
   return (
     <div
-      className="ink-art"
-      style={{
-        width: "100%",
-        height: "100%",
-        display: "flex",
-        justifyContent: "center"
-      }}
+      id="ink-border"
     >
     <div
-      style={{
-        height: "200px",
-        width: "200px",
-      }}
+      className="glitch-title"
     >
       <svg
         width="100%"
-        height="25%"
+        height="100%"
         viewBox="0 0 170 43"
         preserveAspectRatio="none"
       >
@@ -37,7 +30,7 @@ export default function InkArt() {
             Q 9,15 5,20
             Q 0,35 30,21
             Q 80,0 110,21
-            Q 150,43 170,21
+            Q 150,43 160,21
             Q 150,0 110,21
             Q 80,43 30,21"
           stroke="#922C23"

@@ -1,4 +1,4 @@
-import Eye from "./eye";
+import Eye from "../stylizedEye/eye";
 import type { GrEnType } from "./title";
 
 type GlitchLetterProp = {

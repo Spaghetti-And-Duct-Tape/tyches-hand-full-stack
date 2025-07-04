@@ -1,63 +1,24 @@
 #landing-page {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
   transition: all 0.5s ease-in-out;
 
-  .main-menu-container {
-    width: 32rem;
-    padding-top: 20px;
-    opacity: 0;
+  .title-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-  }
+    .title-border {
+      display: flex;
+      margin-top: clamp(-1rem, -4vw, -4rem);
 
-  .visible {
-    opacity: 1;
-  }
 
-  .title-button {
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
-    font-family: "Cinzel", serif;
-    letter-spacing: 0.05em;
-    line-height: 1.1;
-    font-weight: 700;
-    color: inherit;
-    z-index: 1;
-
-    cursor: pointer;
-    display: block;
-    padding: 0.55em 1.5em;
-    background-color: transparent;
-    border: transparent;
-    position: relative;
-
-    
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 200%;
-      height: 100%;
-      background: 
-        radial-gradient(ellipse at left center, rgba(255, 220, 180, 0.28), transparent 60%),
-        linear-gradient(to right, rgba(255, 220, 180, 0.28), transparent 20%);
-      transform: translate(-50%, -50%) scale(2);
-      opacity: 0;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      pointer-events: none;
-      border-radius: 50%;
-      z-index: -1;
-    }
-
-    &:hover::before,
-    &:focus-visible::before {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(3);
-    }
-  }
-
-  .bordering {
-    .ink-art:nth-child(2) {
-      transform: rotateY(180deg);
+      #ink-border:nth-of-type(2) {
+        transform: rotateY(180deg);
+      }
     }
   }
 }

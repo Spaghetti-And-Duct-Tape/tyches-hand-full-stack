@@ -34,11 +34,27 @@
     }
   }
 
-  @keyframes fade-in {
+@keyframes fade-in {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes open-lid {
+  30% {
+    z-index: 4;
+  }
+  100% {
+    transform: translate(0, 1.5%) rotateY(180deg) rotateX(180deg);
+    z-index: 4;
+  }
+}
+
+@keyframes mask-lift {
+  to {
+    transform: translateY(-47%);
   }
 }
