@@ -3,8 +3,8 @@ import "./styles/_variables.scss";
 import "./styles/animations.css";
 
 export default function Game() {
-  console.log("rendered")
+  console.log("rendered");
   return (
     <LandingPage />
-  )
-};
+  );
+}

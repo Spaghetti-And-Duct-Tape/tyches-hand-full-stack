@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./landingPage.scss";
 import Title from "../components/gameAssets/title/title";
-import Eye from "../components/gameAssets/title/eye.tsx";
+import InkArt from "../components/gameAssets/title/inkArt";
 
 export default function LandingPage() {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -25,11 +25,22 @@ export default function LandingPage() {
         style={{
           flex: "1",
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
         }}
       >  
         <Title />
+        <div
+          className="bordering transition-opacity"
+          style={{
+            display: "flex"
+          }}
+        >
+          <InkArt />
+          <p></p>
+          <InkArt />
+        </div>
       </div>
 
       <main

@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { Howl } from "howler";
 import "@fontsource/cinzel/700.css";
 import { wait } from "../../../utils/utils";
 import "./title.scss";
